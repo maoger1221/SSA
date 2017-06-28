@@ -1,0 +1,62 @@
+1、样条插值数据（长）
+缺失142-160共19个数据。
+选取插值节点，1、21、41、61、81、101、121、141、161、181、201、221、241、261、281、301。。前八后八
+2、样条插值数据（短、不连续）样条插值按圆圈的序号
+2个4、2个3、2个2、1个1，共19个
+111①缺失37-40共4个数据。
+选取插值节点，1、6、11、16、21、26、31、36、41、46、51、56、61、66、71、76
+333②缺失121-124共4个数据。
+选取插值节点，85、90、95、100、105、110、115、120、125、130、135、140、145、150、155、160
+222③缺失71-73共3个数据。
+选取插值节点，42、46、50、54、58、62、66、70、74、78、82、86、90、94、98、102
+444④缺失192-194共3个数据。
+选取插值节点，163、167、171、175、179、183、187、191、195、199、203、207、211、215、219、223
+555⑤缺失222-223共2个数据。
+选取插值节点，200、203、206、209、212、215、218、221、224、227、230、233、236、239、242、245
+777⑥缺失275-276共2个数据。
+选取插值节点，253、256、259、262、265、268、271、274、277、280、283、286、289、292、295、298
+666⑦缺失247共1个数据。
+选取插值节点，232、234、236、238、240、242、244、246、248、250、252、254、256、258、260、262
+
+>> pwv=pwv_short_m;
+>> pwv(142:160)=[];
+>> [y,rmse,Lo,po]=ssa_interpolation2(pwv,141,19,0.001);
+
+pwv2(275:276)=[];
+pwv2(247)=[];
+pwv2(222:223)=[];
+pwv2(192:194)=[];
+pwv2(121:124)=[];
+pwv2(71:73)=[];
+pwv2(37:40)=[];
+
+xi=142:160;
+x=[1 21 41 61 81 101 121 141 161 181 201 221 241 261 281 301];
+y=[pwv_short_m(1) pwv_short_m(21) pwv_short_m(41) pwv_short_m(61) pwv_short_m(81) pwv_short_m(101) pwv_short_m(121) pwv_short_m(141) pwv_short_m(161) pwv_short_m(181) pwv_short_m(201) pwv_short_m(221) pwv_short_m(241) pwv_short_m(261) pwv_short_m(281) pwv_short_m(301)];
+pwv_spline=spline(x,y,xi);
+
+
+
+>> x_2_1=[1 6 11 16 21 26 31 36 41 46 51 56 61 66 71 76];y_2_1=[pwv_short_m(1) pwv_short_m(6) pwv_short_m(11) pwv_short_m(16) pwv_short_m(21) pwv_short_m(26) pwv_short_m(31) pwv_short_m(36) pwv_short_m(41) pwv_short_m(46) pwv_short_m(51) pwv_short_m(56) pwv_short_m(61) pwv_short_m(66) pwv_short_m(71) pwv_short_m(76)];
+>> x_2_2=[85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160];y_2_2=[pwv_short_m(85) pwv_short_m(90) pwv_short_m(95) pwv_short_m(100) pwv_short_m(105) pwv_short_m(110) pwv_short_m(115) pwv_short_m(120) pwv_short_m(125) pwv_short_m(130) pwv_short_m(135) pwv_short_m(140) pwv_short_m(145) pwv_short_m(150) pwv_short_m(155) pwv_short_m(160)];
+>> x_2_3=[42 46 50 54 58 62 66 70 74 78 82 86 90 94 98 102];y_2_3=[pwv_short_m(42) pwv_short_m(46) pwv_short_m(50) pwv_short_m(54) pwv_short_m(58) pwv_short_m(62) pwv_short_m(66) pwv_short_m(70) pwv_short_m(74) pwv_short_m(78) pwv_short_m(82) pwv_short_m(86) pwv_short_m(90) pwv_short_m(94) pwv_short_m(98) pwv_short_m(102)];
+>> x_2_4=[163 167 171 175 179 183 187 191 195 199 203 207 211 215 219 223];y_2_4=[pwv_short_m(163) pwv_short_m(167) pwv_short_m(171) pwv_short_m(175) pwv_short_m(179) pwv_short_m(183) pwv_short_m(187) pwv_short_m(191) pwv_short_m(195) pwv_short_m(199) pwv_short_m(203) pwv_short_m(207) pwv_short_m(211) pwv_short_m(215) pwv_short_m(219) pwv_short_m(223)];
+>> x_2_5=[200 203 206 209 212 215 218 221 224 227 230 233 236 239 242 245];y_2_5=[pwv_short_m(200) pwv_short_m(203) pwv_short_m(206) pwv_short_m(209) pwv_short_m(212) pwv_short_m(215) pwv_short_m(218) pwv_short_m(221) pwv_short_m(224) pwv_short_m(227) pwv_short_m(230) pwv_short_m(233) pwv_short_m(236) pwv_short_m(239) pwv_short_m(242) pwv_short_m(245)];
+>> x_2_6=[253 256 259 262 265 268 271 274 277 280 283 286 289 292 295 298];y_2_6=[pwv_short_m(253) pwv_short_m(256) pwv_short_m(259) pwv_short_m(262) pwv_short_m(265) pwv_short_m(268) pwv_short_m(271) pwv_short_m(274) pwv_short_m(277) pwv_short_m(280) pwv_short_m(283) pwv_short_m(286) pwv_short_m(289) pwv_short_m(292) pwv_short_m(295) pwv_short_m(298)];
+>> x_2_7=[232 234 236 238 240 242 244 246 248 250 252 254 256 258 260 262];y_2_7=[pwv_short_m(232) pwv_short_m(234) pwv_short_m(236) pwv_short_m(238) pwv_short_m(240) pwv_short_m(242) pwv_short_m(244) pwv_short_m(246) pwv_short_m(248) pwv_short_m(250) pwv_short_m(252) pwv_short_m(254) pwv_short_m(256) pwv_short_m(258) pwv_short_m(260) pwv_short_m(262)];
+
+pwv_spline_2_1=spline(x_2_1,y_2_1,xi_2_1);pwv_spline_2_2=spline(x_2_2,y_2_2,xi_2_2);pwv_spline_2_3=spline(x_2_3,y_2_3,xi_2_3);pwv_spline_2_4=spline(x_2_4,y_2_4,xi_2_4);pwv_spline_2_5=spline(x_2_5,y_2_5,xi_2_5);pwv_spline_2_6=spline(x_2_6,y_2_6,xi_2_6);pwv_spline_2_7=spline(x_2_7,y_2_7,xi_2_7);
+
+>> pwv_spline_1_final=pwv(1:141);
+>> pwv_spline_1_final=[pwv_spline_1_final;pwv_spline_1'];
+>> pwv_spline_1_final=[pwv_spline_1_final;pwv(142:283)];
+
+
+>> pwv_spline_2_final=pwv2;
+>> pwv_spline_2_final=[pwv_spline_2_final(1:36);pwv_spline_2_1';pwv_spline_2_final(37:283);];
+>> pwv_spline_2_final=[pwv_spline_2_final(1:70);pwv_spline_2_3';pwv_spline_2_final(71:287);];
+>> pwv_spline_2_final=[pwv_spline_2_final(1:120);pwv_spline_2_2';pwv_spline_2_final(121:290);];
+>> pwv_spline_2_final=[pwv_spline_2_final(1:191);pwv_spline_2_4';pwv_spline_2_final(192:294);];
+>> pwv_spline_2_final=[pwv_spline_2_final(1:221);pwv_spline_2_5';pwv_spline_2_final(222:297);];
+>> pwv_spline_2_final=[pwv_spline_2_final(1:246);pwv_spline_2_7';pwv_spline_2_final(247:299);];
+>> pwv_spline_2_final=[pwv_spline_2_final(1:274);pwv_spline_2_6';pwv_spline_2_final(275:300);];

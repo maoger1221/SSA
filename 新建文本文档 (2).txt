@@ -1,0 +1,25 @@
+x_2_1=[1 6 11 16 21 26 31 36 41 46 51 56 61 66 71 76];y_2_1=[td_short(1) td_short(6) td_short(11) td_short(16) td_short(21) td_short(26) td_short(31) td_short(36) td_short(41) td_short(46) td_short(51) td_short(56) td_short(61) td_short(66) td_short(71) td_short(76)];
+x_2_2=[85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160];y_2_2=[td_short(85) td_short(90) td_short(95) td_short(100) td_short(105) td_short(110) td_short(115) td_short(120) td_short(125) td_short(130) td_short(135) td_short(140) td_short(145) td_short(150) td_short(155) td_short(160)];
+x_2_3=[42 46 50 54 58 62 66 70 74 78 82 86 90 94 98 102];y_2_3=[td_short(42) td_short(46) td_short(50) td_short(54) td_short(58) td_short(62) td_short(66) td_short(70) td_short(74) td_short(78) td_short(82) td_short(86) td_short(90) td_short(94) td_short(98) td_short(102)];
+x_2_4=[163 167 171 175 179 183 187 191 195 199 203 207 211 215 219 223];y_2_4=[td_short(163) td_short(167) td_short(171) td_short(175) td_short(179) td_short(183) td_short(187) td_short(191) td_short(195) td_short(199) td_short(203) td_short(207) td_short(211) td_short(215) td_short(219) td_short(223)];
+x_2_5=[200 203 206 209 212 215 218 221 224 227 230 233 236 239 242 245];y_2_5=[td_short(200) td_short(203) td_short(206) td_short(209) td_short(212) td_short(215) td_short(218) td_short(221) td_short(224) td_short(227) td_short(230) td_short(233) td_short(236) td_short(239) td_short(242) td_short(245)];
+x_2_6=[253 256 259 262 265 268 271 274 277 280 283 286 289 292 295 298];y_2_6=[td_short(253) td_short(256) td_short(259) td_short(262) td_short(265) td_short(268) td_short(271) td_short(274) td_short(277) td_short(280) td_short(283) td_short(286) td_short(289) td_short(292) td_short(295) td_short(298)];
+x_2_7=[232 234 236 238 240 242 244 246 248 250 252 254 256 258 260 262];y_2_7=[td_short(232) td_short(234) td_short(236) td_short(238) td_short(240) td_short(242) td_short(244) td_short(246) td_short(248) td_short(250) td_short(252) td_short(254) td_short(256) td_short(258) td_short(260) td_short(262)];
+xi_2_1=37:40;
+xi_2_2=121:124;
+xi_2_3=71:73;
+xi_2_4=192:194;
+xi_2_5=222:223;
+xi_2_6=275:276;
+xi_2_7=247;
+td_spline_2_1=spline(x_2_1,y_2_1,xi_2_1);td_spline_2_2=spline(x_2_2,y_2_2,xi_2_2);td_spline_2_3=spline(x_2_3,y_2_3,xi_2_3);td_spline_2_4=spline(x_2_4,y_2_4,xi_2_4);td_spline_2_5=spline(x_2_5,y_2_5,xi_2_5);td_spline_2_6=spline(x_2_6,y_2_6,xi_2_6);td_spline_2_7=spline(x_2_7,y_2_7,xi_2_7);
+td_spline_2_final=td;
+td_spline_2_final=[td_spline_2_final(1:36);td_spline_2_1';td_spline_2_final(37:283);];
+td_spline_2_final=[td_spline_2_final(1:70);td_spline_2_3';td_spline_2_final(71:287);];
+td_spline_2_final=[td_spline_2_final(1:120);td_spline_2_2';td_spline_2_final(121:290);];
+td_spline_2_final=[td_spline_2_final(1:191);td_spline_2_4';td_spline_2_final(192:294);];
+td_spline_2_final=[td_spline_2_final(1:221);td_spline_2_5';td_spline_2_final(222:297);];
+td_spline_2_final=[td_spline_2_final(1:246);td_spline_2_7';td_spline_2_final(247:299);];
+td_spline_2_final=[td_spline_2_final(1:274);td_spline_2_6';td_spline_2_final(275:300);];
+
+td_spline_2_final-td_short

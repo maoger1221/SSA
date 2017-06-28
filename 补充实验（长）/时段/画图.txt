@@ -1,0 +1,14 @@
+m=142:160;h1=plot(m,l1(142:160),'b.')
+hold on
+m=149:168;h2=plot(m,l2(149:168),'r.')
+hold on
+m=254:273;h3=plot(m,l3(254:273),'g.')
+hold on
+m=37:40;h4=plot(m,s1(37:40),'k.');hold on;
+m=121:124;plot(m,s1(121:124),'k.');hold on;
+m=71:73;plot(m,s1(71:73),'k.');hold on;
+m=192:194;plot(m,s1(192:194),'k.');hold on;
+m=222:223;plot(m,s1(222:223),'k.');hold on;
+m=275:276;plot(m,s1(275:276),'k.');hold on;
+m=247;plot(m,s1(247),'k.');hold on;
+legend([h1,h2,h3,h4])
